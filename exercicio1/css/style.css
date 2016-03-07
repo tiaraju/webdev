@@ -1,0 +1,8 @@
+[ng-click]{
+	cursor:pointer;
+}
+
+td.titles{
+	color:rgb(51,122,183);
+	font-weight: bold;
+}
