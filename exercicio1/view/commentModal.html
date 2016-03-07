@@ -1,0 +1,15 @@
+<md-dialog>
+    <form id="form-profile" data-parsley-validate="" ng-controller="libraryController as ctrl">
+        <md-content class="md-padding">
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Comment</label>
+                    <textarea  rows="8" cols="50" required ng-model="ctrl.comment" type="text"> </textarea>
+                </md-input-container>
+                <md-dialog-actions>
+                    <button class="btn btn-primary" ng-click="ctrl.closeDialog()">Register</button>
+                </md-dialog-actions>
+
+        </md-content>
+    </form>
+</md-dialog>

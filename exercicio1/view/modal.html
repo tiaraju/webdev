@@ -1,12 +1,32 @@
-<md-dialog aria-label="List dialog">
-  <md-dialog-content>
-    <md-list>
-      <md-list-item ng-repeat="item in items">
-        <p>Number {{item}}</p>
-      </md-list-item>
-    </md-list>
+<md-dialog aria-label="List dialog" ng-controller="libraryController as ctrl">
+  <md-dialog-content class="md-padding">
+    <md-input-container flex>
+      <label> Title</label>
+      <input required ng-model="ctrl.book.title" type="text">
+    </md-input-container>
+
+    <md-input-container flex>
+      <label> Writers</label>
+      <input required ng-model="ctrl.book.writers" type="text">
+    </md-input-container>
+
+    <md-input-container flex>
+      <label> Description</label>
+      <input required ng-model="ctrl.book.description" type="text">
+    </md-input-container>
+
+    <md-input-container flex>
+      <label> Price</label>
+      <input required ng-model="ctrl.book.price" type="number">
+    </md-input-container>
+
+    <md-input-container flex>
+      <label> Picture Url</label>
+      <input required ng-model="ctrl.book.picUrl" type="text">
+    </md-input-container>
+
   </md-dialog-content>
   <md-dialog-actions>
-    <md-button ng-click="closeDialog()" class="md-primary">Close Dialog</md-button>
+    <md-button ng-click="closeDialog()" class="md-primary">Add Book</md-button>
   </md-dialog-actions>
 </md-dialog>
