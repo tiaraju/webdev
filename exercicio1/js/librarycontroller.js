@@ -6,6 +6,7 @@
 		self.books=collection;
 		self.book = {};
 		self.comment;
+
 		$scope.bookID;
 
 		
@@ -21,6 +22,10 @@
 	      });
 	    };
 
+	    $scope.setBookId=function(id) {
+	    	 $scope.bookID = id;
+	    };
+
 	    $scope.showCommentDialog= function() {
 	       var parentEl = angular.element(document.body);
 	       $mdDialog.show({
@@ -34,13 +39,11 @@
 
 
 
-	    self.closeDialog = function() {
-	    	console.log(self.comment);
-	    	console.log($scope.bookID);
+	    $scope.closeDialog = function() {
 	    	if(Object.keys(self.book).length != 0){
 		    	self.books.push(self.book);
 	    	}else{
-	    		//self.books[self.bookId]
+	    		console.log(self.books[$scope.bookID].comments.push(self.comment));
 	    	}
 
 	    	$mdDialog.hide();

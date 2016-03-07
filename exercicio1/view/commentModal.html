@@ -1,5 +1,5 @@
-<md-dialog>
-    <form id="form-profile" data-parsley-validate="" ng-controller="libraryController as ctrl">
+<md-dialog  ng-controller="libraryController as ctrl">
+    <form id="form-profile">
         <md-content class="md-padding">
             <div layout layout-sm="column">
                 <md-input-container flex>
@@ -7,7 +7,7 @@
                     <textarea  rows="8" cols="50" required ng-model="ctrl.comment" type="text"> </textarea>
                 </md-input-container>
                 <md-dialog-actions>
-                    <button class="btn btn-primary" ng-click="ctrl.closeDialog()">Register</button>
+                    <button class="btn btn-primary" ng-click="closeDialog()">Register</button>
                 </md-dialog-actions>
 
         </md-content>

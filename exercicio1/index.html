@@ -28,14 +28,16 @@
 			<td> Writers</td>
 			<td> Description</td>
 			<td> Price</td>
-			<td> Add a Comment</td>
+			<td> Comments</td>
+			<td> Add Comment</td>
 		</tr>
 		<tr ng-repeat="book in ctrl.books" >
 			<td>{{book.title}}</td>
 			<td>{{books.writers}}</td>
 			<td>{{book.description}}</td>
 			<td>{{book.price | currency}}</td>
-			<td><button class="glyphicon glyphicon-plus active" ng-click="showCommentDialog();ctrl.bookID=book.id"></button> </td>
+			<td >{{book.comments}}</td>
+			<td><button class="glyphicon glyphicon-plus active" ng-click="showCommentDialog();setBookId(book.id)"></button> </td>
 		</tr>
 
 	</table>
