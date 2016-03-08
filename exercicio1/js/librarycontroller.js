@@ -10,10 +10,7 @@
 		$scope.bookID;
 
 	    $scope.setBookId=function(id) {
-	    	console.log(id);
 	    	 $scope.bookID = id;
-	    	 $scope.book=self.books[id];
-	    	 console.log($scope.book);
 	    };
 
 	    $scope.showModal = function(){
@@ -34,7 +31,6 @@
 
   		$scope.addBook = function (newbook) {
   			$scope.book = newbook;
-  			console.log($scope.book);
 			self.books.push($scope.book);
     		$scope.modalInstance.close();
   		};
@@ -43,16 +39,17 @@
   			 $scope.modalInstance = $uibModal.open({
 		      animation: $scope.animationsEnabled,
 		      templateUrl: '../view/commentModal.html',
-		      //controller: 'libraryController',
+		      controller: 'libraryController',
 			  preserveScope:true,
 		      clickOutsideToClose: true,
 		      scope:$scope
 		    });
+
   		};
 
-  		$scope.saveComment = function(){
-  			console.log($scope.bookID);
-  			self.books[$scope.bookID].comments.push($scope.comment);
+  		$scope.saveComment = function(comentario){
+  			console.log(comentario);
+  			self.books[$scope.bookID].comments.push(comentario);
 			$scope.modalInstance.close();
   		};
 

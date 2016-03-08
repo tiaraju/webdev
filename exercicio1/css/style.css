@@ -6,3 +6,11 @@ td.titles{
 	color:rgb(51,122,183);
 	font-weight: bold;
 }
+
+h3 {
+    text-align: center;
+}
+
+textarea{
+	width:100%;
+}
