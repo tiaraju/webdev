@@ -1,57 +1,64 @@
 (function () {
-	var library= angular.module('library',['ngMaterial']);
-	library.controller('libraryController',function($scope,$mdDialog){
+	var library= angular.module('library',['ngAnimate', 'ui.bootstrap']);
+	library.controller('libraryController',function($scope, $uibModal){
 		var self = this;
 
 		self.books=collection;
-		self.book = {};
-		self.comment;
-
+		
+		$scope.comment;
+		$scope.book = {}
 		$scope.bookID;
 
-		
-
-		$scope.showDialog= function() {
-	       var parentEl = angular.element(document.body);
-	       $mdDialog.show({
-	       	scope:$scope,
-			parent: parentEl,
-			preserveScope:true,
-			clickOutsideToClose: true,
-			templateUrl:'view/modal.html',
-	      });
-	    };
-
 	    $scope.setBookId=function(id) {
+	    	console.log(id);
 	    	 $scope.bookID = id;
+	    	 $scope.book=self.books[id];
+	    	 console.log($scope.book);
 	    };
 
-	    $scope.showCommentDialog= function() {
-	       var parentEl = angular.element(document.body);
-	       $mdDialog.show({
-	       	scope:$scope,
-			parent: parentEl,
-			preserveScope:true,
-			clickOutsideToClose: true,
-			templateUrl:'view/commentModal.html',
-	      });
-	    };
+	    $scope.showModal = function(){
+		    $scope.modalInstance = $uibModal.open({
+		      animation: $scope.animationsEnabled,
+		      templateUrl: '../view/modal.html',
+		      controller: 'libraryController',
+			  preserveScope:true,
+		      clickOutsideToClose: true,
+		      scope:$scope
+		    });
+		    
+		 };
 
+		$scope.toggleAnimation = function () {
+    		$scope.animationsEnabled = !$scope.animationsEnabled;
+  		};
 
+  		$scope.addBook = function (newbook) {
+  			$scope.book = newbook;
+  			console.log($scope.book);
+			self.books.push($scope.book);
+    		$scope.modalInstance.close();
+  		};
 
-	    $scope.closeDialog = function() {
-	    	if(Object.keys(self.book).length != 0){
-		    	self.books.push(self.book);
-	    	}else{
-	    		console.log(self.books[$scope.bookID].comments.push(self.comment));
-	    	}
+  		$scope.showCommentDialog = function(){
+  			 $scope.modalInstance = $uibModal.open({
+		      animation: $scope.animationsEnabled,
+		      templateUrl: '../view/commentModal.html',
+		      //controller: 'libraryController',
+			  preserveScope:true,
+		      clickOutsideToClose: true,
+		      scope:$scope
+		    });
+  		};
 
-	    	$mdDialog.hide();
+  		$scope.saveComment = function(){
+  			console.log($scope.bookID);
+  			self.books[$scope.bookID].comments.push($scope.comment);
+			$scope.modalInstance.close();
+  		};
 
-	    };
-
-
-	
+  		$scope.cancel = function () {
+    		$scope.modalInstance.dismiss('cancel');
+  		};
 
 	});
 })();

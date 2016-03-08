@@ -1,15 +1,12 @@
-<md-dialog  ng-controller="libraryController as ctrl">
-    <form id="form-profile">
-        <md-content class="md-padding">
-            <div layout layout-sm="column">
-                <md-input-container flex>
-                    <label>Comment</label>
-                    <textarea  rows="8" cols="50" required ng-model="ctrl.comment" type="text"> </textarea>
-                </md-input-container>
-                <md-dialog-actions>
-                    <button class="btn btn-primary" ng-click="closeDialog()">Register</button>
-                </md-dialog-actions>
+<div class="modal-header">
+  <h3 class="modal-title">Add a Comment</h3>
+</div>
+<div class="modal-body" ng-controller="libraryController">
 
-        </md-content>
-    </form>
-</md-dialog>
+    <h3> {{comment}} </h3>
+    <p> Comment :<textarea ng-model="comment" type="texta"></textarea></p>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="saveComment()">Add</button>
+  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
