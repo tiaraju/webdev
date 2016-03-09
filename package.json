@@ -1,0 +1,16 @@
+{
+  "name": "exercicio1",
+  "version": "0.1.5",
+  "description": "first example of angularjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "4.13.3"
+  },
+  "engines": {
+    "node": "0.12.7"
+  }
+}
