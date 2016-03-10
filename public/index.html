@@ -19,35 +19,39 @@
 	<script src="model/library.js"></script>
 
 </head>
-<body ng-controller="libraryController as ctrl">
+<body class="container" ng-controller="libraryController as ctrl">
+	<div class="jumbotron">
+		<table id="booktable" class="table table-striped">
+			<tr>
+				<td class="titles"> Title</td>
+				<td class="titles"> Writers</td>
+				<td class="titles"> Description</td>
+				<td class="titles"> Price</td>
+				<td class="titles"> Comments</td>
+				<td class="titles"> Add Comment</td>
+				<td class="titles"> Edit</td>
+			</tr>
+			<tr ng-repeat="book in ctrl.books" >
+				<td>{{book.title}}</td>
+				<td >
+					<li ng-repeat="writer in book.writers" style="font-size:14px">
+						{{writer}}
+					</li>
+				</td>
+				<td>{{book.description}}</td>
+				<td>{{book.price | currency}}</td>
+				<td>
+					<p style="font-size: 14px;" ng-repeat="comment in book.comments">
+						{{comment}}	
+					</p>
+				</td>
+				<td><a class="glyphicon glyphicon-plus active" ng-click="showCommentDialog();setBookId(book.id)"></a> </td>
+				<td ><a class="glyphicon glyphicon-edit"  ng-click=""></a></td>
+			</tr>
 
-	<table id="booktable" class="table table-striped">
-		<tr>
-			<td class="titles"> Title</td>
-			<td class="titles"> Writers</td>
-			<td class="titles"> Description</td>
-			<td class="titles"> Price</td>
-			<td class="titles"> Comments</td>
-			<td class="titles"> Add Comment</td>
-			<td class="titles"> Edit</td>
-		</tr>
-		<tr ng-repeat="book in ctrl.books" >
-			<td>{{book.title}}</td>
-			<td>{{books.writers}}</td>
-			<td>{{book.description}}</td>
-			<td>{{book.price | currency}}</td>
-			<td>
-				<p ng-repeat="comment in book.comments">
-					{{comment}}	
-				</p>
-			</td>
-			<td><a class="glyphicon glyphicon-plus active" ng-click="showCommentDialog();setBookId(book.id)"></a> </td>
-			<td ><a class="glyphicon glyphicon-edit"  ng-click=""></a></td>
-		</tr>
-
-	</table>
-	<div>
-		<button class="btn btn-primary" ng-click="showModal()">Add Book</button>
+		</table>
+		<hr>
+		<button class="btn btn-primary btn-block" ng-click="showModal()">Add Book</button>
 	</div>
 
 	
