@@ -47,9 +47,25 @@
 
   		};
 
+		$scope.showEditDialog = function(){
+			$scope.modalInstance = $uibModal.open({
+		      animation: $scope.animationsEnabled,
+		      templateUrl: '../view/editModal.html',
+		      controller: 'libraryController',
+			  preserveScope:true,
+		      clickOutsideToClose: true,
+		      scope:$scope
+		    });
+
+  		};
+
   		$scope.saveComment = function(comentario){
-  			console.log(comentario);
   			self.books[$scope.bookID].comments.push(comentario);
+			$scope.modalInstance.close();
+  		};
+
+  		$scope.saveBook = function(book){
+  			self.books[$scope.bookID]=book;
 			$scope.modalInstance.close();
   		};
 
