@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h3 class="modal-title"><b>Editing {{ctrl.books[bookID].title}}</b></h3>
+</div>
+<div class="modal-body">
+
+    <h4><input ng-model="book.title" type="text" placeholder="Title"> </input> </h4>
+    <h4><input ng-model="book.writers"  ng-list placeholder="Writers"> </input> </h4>
+    <h4><textarea  ng-model="book.description" type="text" placeholder="Description"></textarea></p>
+    <h4><input ng-model="book.price"  type="Number" placeholder="Price"> </input> </h4>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary btn-block" type="button" ng-click="saveBook(book)">Save</button>
+  <button class="btn btn-warning btn-block" type="button" ng-click="cancel()">Cancel</button>
+</div>
