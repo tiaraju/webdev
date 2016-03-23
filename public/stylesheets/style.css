@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+[ng-click]{
+	cursor:pointer;
+}
+
+td.titles{
+	color:rgb(51,122,183);
+	font-weight: bold;
+}
+
+h3 {
+    text-align: center;
+}
+
+textarea{
+	width:100%;
+}
+
+table{
+	flex-wrap: true;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
