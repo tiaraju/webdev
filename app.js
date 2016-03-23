@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/views', express.static(__dirname + '/views/'));
 app.use('/js', express.static(__dirname + '/js/'));
 app.use('/public', express.static(__dirname + '/public/'));
+app.use('/css', express.static(__dirname + '/css/'));
 
 
 

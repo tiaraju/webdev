@@ -7,6 +7,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/',function (req,res) {
+	console.log("entrou");
 	 var book = req.body;
 	 collection.push(book);
 	 res.status(200);

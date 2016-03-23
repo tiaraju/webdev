@@ -43,6 +43,7 @@
 
   		$scope.addBook = function (newbook) {
   			$scope.book = newbook;
+  			console.log("entrou");
   			$http.post(URL+"books",newbook).then(function (data,status) {
     			 $scope.modalInstance.close(); 
   			}).then(function (data,status){
