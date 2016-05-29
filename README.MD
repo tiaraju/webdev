@@ -1,1 +1,0 @@
-Disciplina de Programação Web - UFCG

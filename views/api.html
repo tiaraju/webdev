@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>API da Biblioteca Prog3 - UGFCG</h1>
+
+	<div>
+		<h2>Book</h2>
+		<p>Recurso referente a um livro.</p>
+		
+		<h3>GET /book/</h3>
+			<p>Retorna um JSON contendo o status da requisição e uma lista de todos os livros salvos no BD dentro do objeto results.</p>
+
+		<h3>POST /book/</h3>
+		
+			<p>Adiciona um novo livro na biblioteca. O corpo da mensagem deve estar em formato JSON. Os seguintes campos são necessários:</p>
+				
+			<ul>
+				<li>title: Título do livro.</li>
+				<li>writers: Lista de autores do livro. Deve ser passado uma lista de Strings(i.e: ["paul","john",...,]</li>
+				<li>description: Descrição do livro.</li>
+				<li>price: Preço do livro.</li>
+				<li>cover: Url da capa do livro.</li>
+				<li>comments:Lista de comentários sobre o livro</li>
+			</ul>
+			<p>*Title, writers e  price são obrigatórios</p>
+	
+		<h3>PUT /book/:bookId</h3>
+				
+				<p>Substitui um livro já existente. Espera-se um  JSON que descreva um livro no corpo da mensagem.</p>
+	</div>
+</body>
+</html>
