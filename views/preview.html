@@ -1,0 +1,45 @@
+<div class=" container modal-body" >
+
+	<h1 ng-hide="editing">{{currentBook.title}}</h1>
+
+	<input small="true" ng-show="editing" type="text" ng-model="currentBook.title" />
+	<br>
+	<input small="true" ng-show="editing" type="text" ng-model="currentBook.cover" />
+
+
+	<h3>Autores</h3>
+	<input small="true" id="writers" ng-show="editing" type="text" ng-model="currentBook.writers" width="10px;" />
+	<ul ng-hide="editing">
+		<li ng-repeat="author in currentBook.writers">{{author}}</li>
+	</ul>
+
+	<h3>Preço</h3>
+	<input small="true"ng-show="editing" type="text" ng-model="currentBook.price" />
+	<p ng-hide="editing">{{currentBook.price}}</p>
+
+	<h3>Descrição</h3>
+	<textarea small="true" ng-show="editing" ng-model="currentBook.description" rows="3"></textarea>
+	<p ng-hide="editing">{{currentBook.description}}</p>
+	<br>
+	<button ng-hide="editing" ng-click="edit()">Editar</button>
+
+	<button ng-show="editing" ng-click="cancelEdition()" class="btn-negative">Cancelar</button>
+
+	<button ng-show="editing" ng-click="saveBook(currentBook)" class="btn-positive">Salvar</button>
+
+
+	<h3>Comentários</h3>
+	<form id="commentForm">
+		<input type="text" name="name" placeholder="Nome" required />
+		<input type="text" name="comment" placeholder="Comentário" ng-model="newComment" required />
+		<input type="hidden" name="book_id" value="{{currentBook._id}}" />
+		<input type="submit" value="Comentar" ng-click="saveComment();" />
+	</form>
+
+	<p ng-hide="currentBook.comments.length">Não há comentários para serem exibidos.</p>
+
+	<div ng-repeat="comment in currentBook.comments">
+		<li>{{comment}}</li>
+	</div>
+	<br/><br/><br/>
+</div>

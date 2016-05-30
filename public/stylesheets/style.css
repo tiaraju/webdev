@@ -94,6 +94,14 @@ aside input {
 aside input[type=submit] {
 	width: 100px;
 }
+
+input[small=true]{
+	width: 40% !important;	
+}
+
+textarea[small=true]{
+	width: 40% !important;	
+}
 aside input, aside button {
 	margin: 5px;
 }

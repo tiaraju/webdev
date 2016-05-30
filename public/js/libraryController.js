@@ -7,6 +7,9 @@
 
 		self.books = null;
 		$scope.bookID;
+		$scope.currentBook;
+		$scope.editing=false;
+		$scope.newComment;
 
 		$scope.getBooks = function(){
 			$http.get("/book/").success(function(response){
@@ -19,8 +22,11 @@
 		$scope.getBooks();
 
 	    $scope.setBookId=function(id) {
-	    	console.log(id);
 	    	 $scope.bookID = id;
+	    };
+
+	    $scope.setCurrentBook = function(id){
+	    	$scope.currentBook = self.books[id];
 	    };
 
 
@@ -73,10 +79,38 @@
 
 		};
 
-		$scope.saveComment = function(comentario){
-			self.books[$scope.bookID].comments.push(comentario);
-			$scope.modalInstance.close();
-			$scope.getBooks();
+		$scope.showPreviewDialog = function(){
+			$scope.modalInstance = $uibModal.open({
+		      animation: $scope.animationsEnabled,
+		      templateUrl: '/views/preview.html',
+		      controller: 'libraryController',
+			  preserveScope:true,
+		      clickOutsideToClose: true,
+		      scope:$scope
+		    });
+
+		};
+
+		$scope.edit = function(){
+			$scope.editing = true;
+		}
+
+
+		$scope.cancelEdition = function(){
+			$scope.editing = false;
+		}
+
+
+		$scope.saveComment = function(){
+			$scope.currentBook.comments.push($scope.newComment);
+			$http.put("/book/"+$scope.bookID,$scope.currentBook).
+			then(function (data,status) {
+				$scope.modalInstance.close();
+				$scope.getBooks();
+				location.reload();
+			}).then(function (data,status){
+				 $scope.modalInstance.close();
+			});
 		};
 
 		$scope.saveBook = function(book){

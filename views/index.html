@@ -150,7 +150,7 @@
 	
 
 	<main>
-		<article class="book" ng-repeat="book in ctrl.books" ng-click="showEditDialog(book._id);setBookId(book._id)" >
+		<article class="book" ng-repeat="(index,book) in ctrl.books" ng-click="showPreviewDialog();setCurrentBook(index);setBookId(book._id);">
 			<h3>{{book.title}}</h3>
 			<img alt="{{book.title}}" ng-src="{{book.cover}}" max-width="300px" max-height="200px">
 			<p>{{ book.price | currency}}</p>

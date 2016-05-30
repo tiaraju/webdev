@@ -7,7 +7,7 @@
 6 silly lifecycle webdev@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle webdev@0.0.0~start: webdev@0.0.0
 8 verbose lifecycle webdev@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle webdev@0.0.0~start: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/tiaraju/workspace/webdev/node_modules/.bin:/usr/bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/media/hdd/Linux/Dev/android-sdk-linux/tools:/media/hdd/Linux/Dev/android-sdk-linux/platform-tools
+9 verbose lifecycle webdev@0.0.0~start: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/tiaraju/workspace/webdev/node_modules/.bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 10 verbose lifecycle webdev@0.0.0~start: CWD: /home/tiaraju/workspace/webdev
 11 silly lifecycle webdev@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle webdev@0.0.0~start: Returned: code: 1  signal: null
