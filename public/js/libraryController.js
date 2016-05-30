@@ -13,6 +13,7 @@
 
 		$scope.getBooks = function(){
 			$http.get("/book/").success(function(response){
+				console.log("gotBooks");
 				self.books=response.result.data;
 			}).error(function (response){
 				 console.log("error on get book");
@@ -48,23 +49,14 @@
 
 		$scope.addBook = function (newbook) {
 			$scope.book = newbook;
-			$http.post("/book/",newbook).then(function (data,status) {
-			 $scope.modalInstance.close(); 
-				}).then(function (data,status){
+			$http.post("/book/",newbook).
+			then(function (data,status) {
+				$scope.modalInstance.close(); 
+				$scope.getBooks();
+				location.reload();
+			}).then(function (data,status){
 				 $scope.modalInstance.close();
 			});
-		};
-
-		$scope.showCommentDialog = function(){
-			 $scope.modalInstance = $uibModal.open({
-			      animation: $scope.animationsEnabled,
-			      templateUrl: '/views/commentModal.html',
-			      controller: 'libraryController',
-				  preserveScope:true,
-			      clickOutsideToClose: true,
-			      scope:$scope
-	    	});
-
 		};
 
 		$scope.showEditDialog = function(){
@@ -80,6 +72,8 @@
 		};
 
 		$scope.showPreviewDialog = function(){
+			$scope.newBook = $scope.currentBook;
+			console.log($scope.newBook);
 			$scope.modalInstance = $uibModal.open({
 		      animation: $scope.animationsEnabled,
 		      templateUrl: '/views/preview.html',
@@ -98,6 +92,7 @@
 
 		$scope.cancelEdition = function(){
 			$scope.editing = false;
+			$scope.cancel();
 		}
 
 
@@ -128,6 +123,7 @@
 		$scope.cancel = function () {
 			$scope.modalInstance.dismiss('cancel');
 			$scope.getBooks();
+			location.reload();
 		};
 	});
 
