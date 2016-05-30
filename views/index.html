@@ -7,6 +7,12 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 	<script src="/js/libraryController.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
 
 
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
@@ -108,7 +114,7 @@
 		                        <div class="cell-wrapper layout-widget-wrapper">
 		                            <span id="hs_cos_wrapper_module_14063074149011416" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu"><div id="hs_menu_wrapper_module_14063074149011416" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="default">
 		 <ul>
-		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">Add um Livro</a>
+		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#" ng-click="showModal();">Add um Livro</a>
 		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">Parceiros</a>   
 		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">Contribua Aqui!</a>
 		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="/api">API</a>
@@ -144,7 +150,7 @@
 	
 
 	<main>
-		<article class="book" ng-repeat="book in books"  >
+		<article class="book" ng-repeat="book in ctrl.books" ng-click="showEditDialog(book._id);setBookId(book._id)" >
 			<h3>{{book.title}}</h3>
 			<img alt="{{book.title}}" ng-src="{{book.cover}}" max-width="300px" max-height="200px">
 			<p>{{ book.price | currency}}</p>
