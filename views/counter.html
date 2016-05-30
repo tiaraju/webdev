@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="counterApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="/js/counterController.js"></script>
+    <title>Counter</title>
+  </head>
+  <body class="container" ng-controller="counterCtrl as ctrl">
+    <style>
+      .disable {
+      }
+    </style>
+    <div class="page-header text-center">
+      <h2>Counter <br> <small> Programação 3 - UFCG</small></h2>
+    </div>
+    <div class="page-header text-center">
+      <h1>Timer: {{ctrl.atual}} </h1>
+    </div>
+
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-sm-6 form-group">
+        <label for="final">Valor final</label>
+        <input type="number" class="form-control" id="final" ng-model="ctrl.final" placeholder="valor final">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label for="milli">Frequência</label>
+        <input type="number" class="form-control" id="milli" ng-model="ctrl.milli" placeholder="milisegundos">
+      </div>
+      <div class="col-sm-12 btn-group btn-group-sm">
+        <button type="button" ng-disabled="ctrl.state" class="btn btn-default" ng-click="ctrl.init()" name="button">Iniciar</button>
+        <button type="button" ng-disabled="!ctrl.state" class="btn btn-default" ng-click="ctrl.stop()" name="button">Parar</button>
+        <button type="button" ng-disabled="ctrl.state" class="btn btn-default" ng-click="ctrl.reset()" name="button">Resetar</button>
+      </div>
+    </div>
+  </body>
+</html>
