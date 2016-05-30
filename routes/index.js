@@ -8,6 +8,4 @@ router.get('/', function(req, res, next) {
 router.get('/api', function(req, res, next) {
 	res.render('api.html');
 });
-
-
 module.exports = router;
