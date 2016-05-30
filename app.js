@@ -8,6 +8,7 @@ var db = require('./config/database');
 
 var routes = require('./routes/index');
 var book = require('./routes/book');
+var cors = require('cors');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 app.use(function(req,res,next){
     req.db = db;

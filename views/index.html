@@ -2,10 +2,153 @@
 <html>
 <head>
 	<title></title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:type" content="article">
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="/js/libraryController.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
+	<link rel="canonical" href="http://blog.vizuri.com/creating-your-own-angular-material-navigation-menu">
+	<link rel="stylesheet" href="//cdn2.hubspot.net/hub/342946/hub_generated/template_assets/1455837685871/custom/page/css/font-awesome.min.css">
+	<link href="//fonts.googleapis.com/css?family=Junge" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Caudex:400,400italic" rel="stylesheet" type="text/css">
+	<link rel="alternate" type="application/rss+xml" href="http://blog.vizuri.com/rss.xml">
+	<link href="//cdn2.hubspot.net/hub/-1/hub_generated/style_manager/1431123893544/hubspot_default/shared/responsive/layout.min.css" rel="stylesheet">
+	<link href="//cdn2.hubspot.net/hub/342946/hub_generated/template_assets/1460991495481/custom/styles/default/hs_default_custom_style.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//cdn2.hubspot.net/hub/342946/hub_generated/template_assets/1464128788134/custom/page/css/homepage.css">
+    <link href="//cdn2.hubspot.net/hub/342946/hub_generated/template_assets/1464128788134/custom/page/css/homepage.css" rel="stylesheet" type="text/css">
+	<link href="//cdn2.hubspot.net/hub/342946/hub_generated/style_manager/1413597579121/custom/page/css/polymer-test.min.css" rel="stylesheet" type="text/css">
+
 
 </head>
-<body>
-<h1>TESTE</h1>
+
+<body ng-app="library" ng-controller="libraryController as ctrl">
+<div class="header-container-wrapper">
+    <div class="header-container container-fluid">
+
+        <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+        <div class="row-fluid ">
+            <div class="span12 widget-span widget-type-cell blog" style="padding-bottom:60px; max-height:350px;" data-widget-type="cell" data-x="0" data-w="12">
+
+                <div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+                <div class="row-fluid ">
+                    <div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+                        <div class="row-fluid-wrapper row-depth-2 row-number-1 ">
+                        <div class="row-fluid ">
+                            <div class="span12 widget-span widget-type-cell full-width-bg-social" style="margin-bottom:10px;" data-widget-type="cell" data-x="0" data-w="12">
+
+                                <div class="row-fluid-wrapper row-depth-3 row-number-1 ">
+                                <div class="row-fluid ">
+                                    <div class="span12 widget-span widget-type-cell page-center" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+                                        <div class="row-fluid-wrapper row-depth-3 row-number-2 ">
+                                        <div class="row-fluid ">
+                                            <div class="span6 widget-span widget-type-raw_html " style="padding-top:4px; padding-bottom:13px; float: left;" data-widget-type="raw_html" data-x="0" data-w="6">
+                                                <div class="cell-wrapper layout-widget-wrapper">
+                                                </div><!--end layout-widget-wrapper -->
+                                            </div><!--end widget-span -->
+                                            <div class="span4 widget-span widget-type-raw_html " style="padding-top:5px; text-align:left; float:left;" data-widget-type="raw_html" data-x="6" data-w="4">
+                                                <div class="cell-wrapper layout-widget-wrapper">
+                                                    <span id="hs_cos_wrapper_module_141114660499810577" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><div style="color: #3F8DF2;vertical-align:middle;">
+													<span style="text-align:right;vertical-align:middle;"><ul id="navlist" class="hide" style="margin-bottom:0px;">
+													<li><a style="color:#979797; font-size:1em;vertical-align:middle;" href="#/contact">Contact Us </a></li>
+													</ul></span></div></span>
+													                                                </div><!--end layout-widget-wrapper -->
+                                            </div><!--end widget-span -->
+                                            <div class="span2 widget-span widget-type-space " style="" data-widget-type="space" data-x="10" data-w="2">
+                                                <div class="cell-wrapper layout-widget-wrapper">
+                                                    <span id="hs_cos_wrapper_module_14111474244965668" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="space"></span>
+                                                </div><!--end layout-widget-wrapper -->
+                                            </div><!--end widget-span -->
+                                        </div><!--end row-->
+                                        </div><!--end row-wrapper -->
+                                    </div><!--end widget-span -->
+                            </div><!--end row-->
+                            </div><!--end row-wrapper -->
+                        </div><!--end widget-span -->
+                </div><!--end row-->
+                </div><!--end row-wrapper -->
+
+
+                <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+                <div class="row-fluid ">
+                    <div class="span12 widget-span widget-type-cell sticky" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+                        <div class="row-fluid-wrapper row-depth-2 row-number-1 ">
+                        <div class="row-fluid ">
+                            <div class="span12 widget-span widget-type-cell page-center" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+                                <div class="row-fluid-wrapper row-depth-3 row-number-1 ">
+                                <div class="row-fluid ">
+                                    <div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+		<div class="" data-global-widget-path="generated_global_groups/1091301964.html">        <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+		        <div class="row-fluid ">
+		            <div class="span12 widget-span widget-type-cell " style="margin-bottom:-5px; padding-top:10px;" data-widget-type="cell" data-x="0" data-w="12">
+
+		                <div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+		                <div class="row-fluid ">
+		                    <div class="span2 widget-span widget-type-logo " style="padding-top: 6px; float:left;" data-widget-type="logo" data-x="0" data-w="2">
+		                        <div class="cell-wrapper layout-widget-wrapper">
+		                            <span id="hs_cos_wrapper_module_14037307393911" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="" id="hs-link-module_14037307393911" style="border-width:0px;border:0px;">
+		                            <img src="/images/logo.png" class="hs-image-widget " style="height:100px;width:150px;border-width:0px;border:0px;" width="150"  src="/images/logo.png" sizes="(max-width: 150px) 100vw, 150px"></a></span>
+		                        </div><!--end layout-widget-wrapper -->
+		                    </div><!--end widget-span -->
+		                    <div class="span2 widget-span widget-type-raw_html " style="float:left; padding-top:35px" data-widget-type="raw_html" data-x="2" data-w="2">
+		                        <div class="cell-wrapper layout-widget-wrapper">
+		                            <span id="hs_cos_wrapper_module_14128768830546115" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><div class="mainnavlist" style="color: #3F8DF2;vertical-align:middle;text-align: left">
+		<span style="text-align:right;vertical-align:middle;text-align: left"><ul id="navlist" style="margin-bottom:0px; ">
+		<li><a style="color:#979797; font-size:1em;vertical-align:middle;text-align: left" href="#">Contact Us </a></li>
+		</ul></span></div></span>
+		                        </div><!--end layout-widget-wrapper -->
+		                    </div><!--end widget-span -->
+		                    <div class="span8 widget-span widget-type-menu menutab custom-menu-primary" style="padding-top: 25px; font-weight: 400; font-size:14pt;" data-widget-type="menu" data-x="4" data-w="8">
+		                        <div class="cell-wrapper layout-widget-wrapper">
+		                            <span id="hs_cos_wrapper_module_14063074149011416" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu"><div id="hs_menu_wrapper_module_14063074149011416" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="default">
+		 <ul>
+		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">Add um Livro</a>
+		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">Parceiros</a>   
+		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">Contribua Aqui!</a>
+		  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="/api">API</a>
+		</div></span>
+		                        </div><!--end layout-widget-wrapper -->
+		                    </div><!--end widget-span -->
+		                </div><!--end row-->
+		                </div><!--end row-wrapper -->
+		            </div><!--end widget-span -->
+		    </div><!--end row-->
+		    </div><!--end row-wrapper -->
+		</div><!-- end coded_template: id:1091330279 path:generated_global_groups/1091301964.html -->
+
+		                                    </div><!--end widget-span -->
+		                                </div><!--end row-->
+		                                </div><!--end row-wrapper -->
+		                            </div><!--end widget-span -->
+		                    </div><!--end row-->
+		                    </div><!--end row-wrapper -->
+		                </div><!--end widget-span -->
+		        </div><!--end row-->
+		        </div><!--end row-wrapper -->
+		    </div><!--end widget-span -->
+		</div><!--end row-->
+		</div><!--end row-wrapper -->
+		</div><!--end widget-span -->
+		</div><!--end row-->
+		</div><!--end row-wrapper -->
+
+		    </div><!--end header -->
+		</div><!--end header wrapper -->
+
+	
+
+	<main>
+		<article class="book" ng-repeat="book in books"  >
+			<h3>{{book.title}}</h3>
+			<img alt="{{book.title}}" ng-src="{{book.cover}}" max-width="300px" max-height="200px">
+			<p>{{ book.price | currency}}</p>
+		</article>
+	</main>
 </body>
 </html>

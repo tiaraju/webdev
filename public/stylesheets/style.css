@@ -6,3 +6,145 @@ body {
 a {
   color: #00B7FF;
 }
+
+main {
+	width: 100%;
+	height: 100%;
+	margin-top: 30px;
+	padding: 10px;
+	float: left;
+}
+
+body {
+	font-family: Arial;
+	margin: 0;
+	color: #171717;
+	background-color: #f2f2f2;
+}
+a {
+	text-decoration: none;
+}
+h1, h3 {
+	color: rgb(63,81,181);
+}
+input, textarea {
+	font-family: Arial;
+	width: 300px;
+	border: 1px solid #d7d7d7;
+	border-radius: 2px;
+	padding: 5px;
+}
+button, input[type=submit] {
+	background-color: rgb(63,81,181);
+	border: 0;
+	border-radius: 3px;
+	color: white;
+	padding: 10px;
+}
+nav {
+	position: fixed;
+	width: 100%;
+	height: 30px;
+	background-color: rgb(63,81,181);
+	padding: 5px;
+	color: white;
+}
+nav span {
+	margin-right: 10px;
+	width: 200px;
+}
+nav img {
+	height: 30px;
+	vertical-align: middle;
+}
+nav button {
+	padding: 7px;
+}
+nav input {
+	width: calc(100% - 320px);
+}
+main {
+	width: 100%;
+	height: 100%;
+	margin-top: 30px;
+	padding: 10px;
+	float: left;
+}
+aside {
+	position: fixed;
+	overflow-y: scroll;
+	right: -480px;
+	margin-top: 40px;
+	width: 450px;
+	height: 100%;
+	background-color: white;
+	border: 1px solid #d7d7d7;
+	padding: 10px;
+}
+aside h1 {
+	text-align: center;
+}
+aside h3 {
+	border-bottom: 1px solid rgb(63,81,181);
+	padding-bottom: 3px;
+}
+aside input {
+	width: calc(100% - 20px);
+}
+aside input[type=submit] {
+	width: 100px;
+}
+aside input, aside button {
+	margin: 5px;
+}
+aside textarea {
+	width: 100%;	
+}
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.25);
+	display: none;
+}
+.book {
+	display: inline-block;
+	width: 200px;
+	background-color: white;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid #d7d7d7;
+	text-align: center;
+	cursor: pointer;
+}
+.book img {
+	width: 100%;
+}
+.btn-negative {
+	background-color: #e74c3c;
+}
+.btn-positive {
+	background-color: #2ecc71;
+}
+#addBookMenu {
+	position: fixed;
+	background: white;
+	border: 1px solid #d7d7d7;
+	width: 400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#addBookMenu input, #addBookMenu textarea {
+	display: block;
+	width: calc(100% - 30px);
+	margin: 10px;
+}
+#addBookMenu h2, #addBookMenu input[type=submit] {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.error {
+	color: red;
+}
